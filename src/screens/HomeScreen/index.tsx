@@ -3,16 +3,13 @@ import {FlatList, Text, View, Pressable} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 const HomeScreen = () => {
+    const navigation = useNavigation();
   return (
-    <View style={{flex: 1, paddingVertical: 10}}>
-      <View
-        style={{
-          marginHorizontal: 15,
-          borderBottomWidth: 1,
-          borderBottomColor: '#CECECE',
-        }}>
-        <Text style={{paddingVertical: 15}}>{}</Text>
-      </View>
+    <View style={{
+        flex: 1,
+        paddingVertical: 10,
+        marginHorizontal: 15,
+    }}>
       <FlatList
         data={[
           {key: 'Открыть рабочую смену', value: 'session'},
@@ -23,9 +20,9 @@ const HomeScreen = () => {
           <Pressable
             onPress={() => {
               if (item.value === 'session') {
-                // navigation.navigate('OpenSessionScreen');
+                navigation.navigate('OpenSessionScreen');
               } else if (item.value === 'logout') {
-                // signOut();
+                signOut();
               } else {
                 // navigation.navigate('SessionsReportScreen');
               }

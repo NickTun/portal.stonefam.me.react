@@ -15,6 +15,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/screens/HomeScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
 import SignInScreen from './src/screens/SignInScreen';
+import OpenSessionScreen from './src/screens/OpenSessionScreen';
 
 function Tabs () {
   return(
@@ -42,9 +43,9 @@ function App(): JSX.Element {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Home" component={SignInScreen} options={{headerShown:false}}/>
+        <Stack.Screen name="OpenSessionScreen" component={OpenSessionScreen} options={{headerShown:false}}/>
         <Stack.Screen name="Tabs" component={Tabs} options={{headerShown:false}}/>
       </Stack.Navigator>
-      
     </NavigationContainer>
   );
 }
